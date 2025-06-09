@@ -97,6 +97,11 @@ async function main() {
   app.use("/listings/:id/reviews",reviewRouter);
   app.use("/",userRouter);
 
+//base
+app.get("/",(req,res)=>{
+  res.redirect("./views/listings/index.ejs");
+});
+
   //search button
   app.get("/search",async (req,res)=>{
     const location = req.query.q?.trim().toLowerCase();

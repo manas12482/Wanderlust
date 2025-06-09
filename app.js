@@ -97,10 +97,6 @@ async function main() {
   app.use("/listings/:id/reviews",reviewRouter);
   app.use("/",userRouter);
 
-//base
-app.get("/",(req,res)=>{
-  res.redirect("./views/listings/index.ejs");
-});
 
   //search button
   app.get("/search",async (req,res)=>{
@@ -122,10 +118,6 @@ app.get("/",(req,res)=>{
       res.status(500).send("Server error.");
     }
   });
-
-app.get("/", (req, res) => {
-  res.redirect("/listings");
-});
 
 
 

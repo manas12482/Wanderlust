@@ -22,6 +22,14 @@ const listingController = require("../controllers/listings.js")
          wrapAsync(listingController.create)
       );
       
+router.get("/", async (req, res, next) => {
+  try {
+    const listings = await Listing.find({});
+    res.render("listings/index.ejs", { listings });
+  } catch (e) {
+    next(e);  // Pass error to error middleware
+  }
+});
  
 
 //NEW ROUTE

@@ -15,7 +15,9 @@
         </div>
     </div>
  <div class="btns">
-     <button type="button" class="btn btn-success col-1 offset-3 mb-3">Book now</button>
+     
+<a href="mailto:<%= listing.owner.email %>?subject=Booking Request for <%= listing.title %>" class="btn btn-success col-1 offset-3 mb-3">Book now</a>
+
 </div>
     <%  if(currUser && listing.owner._id.equals(currUser._id)) { %>
     
